@@ -1,7 +1,7 @@
 {
   "name": "Platform Switcher",
   "description": "Allows you to change the platform Discord thinks you are using.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "license": "MIT",
   "author": {
     "name": "Vbriese",

@@ -4,19 +4,12 @@ import { getModule } from '@vizality/src/core/modules/webpack';
 
 export default class PlatformSwitcher extends Plugin {
   start () {
-    const platform = getModule(m => m.getPlatform);
-
-    patch(platform, 'isWindows', () => {
-      return this.settings.get('platform', 0) === 0;
-    });
-
-    patch(platform, 'isOSX', () => {
-      return this.settings.get('platform', 0) === 1;
-    });
-
-    patch(platform, 'isLinux', () => {
-      return this.settings.get('platform', 0) === 2;
-    });
+    [ 'isWindows', 'isOSX', 'isLinux' ]
+      .forEach((value, index) => {
+        patch(getModule('getPlatform'), value, () =>
+          this.settings.get('platform', 0) === index
+        );
+      });
 
     // isWeb returns true if previous funtions all return false
   }
