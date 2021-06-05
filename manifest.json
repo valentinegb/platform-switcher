@@ -1,0 +1,10 @@
+{
+  "name": "Platform Switcher",
+  "description": "Allows you to change the platform Discord thinks you are using.",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": {
+    "name": "Vbriese",
+    "id": "441384103946878987"
+  }
+}
